@@ -14,8 +14,8 @@ public class Serializer {
 	private int currentElement = -1;
 	private ArrayList<Object> serializedObjects = new ArrayList<Object>();
 
-	public Serializer{
-		
+	public Serializer(){
+		//mah constructor
 	}
 
 	public Document serialize(Object object) {
