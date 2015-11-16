@@ -14,6 +14,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 
+import org.jdom2.*;
 import org.jdom2.output.XMLOutputter;
 
 public class Receiver {
@@ -23,6 +24,8 @@ public class Receiver {
 	private static int port = 8001;
 	private static ServerSocket serverSock;
 	private static Socket sock;
+	private static Deserializer des;
+	private static ObjectVisualizer objVisualizer;
 	
 	public static void main(String[] args) throws Exception{
 		
@@ -63,9 +66,14 @@ public class Receiver {
 			} 
 			
 				//convert string to XML document (use deserializer's method)
-			//TODO	
-			System.out.println("Receiver: Received string = " + received);//delete after
-
+			System.out.println("Receiver: Received XML");
+			des = new Deserializer();
+			Document doc = des.stringToDoc(received);
+				//re-create the object 
+			Object obj = des.ReadXMLFile(doc);
+				//visualize object
+			objVisualizer.inspect(obj);
+			
 		}		
 		catch (IOException e) 
 		{

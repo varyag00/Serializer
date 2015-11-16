@@ -25,7 +25,7 @@ public class Deserializer {
 	private Object obj;
 
 		//reads a XML Document representation of an object, creates the object and object
-	private Object ReadXMLFile(Document doc){
+	public Object ReadXMLFile(Document doc){
 
 			//get root node, get list of fields
 		Element rootNode = doc.getRootElement();
@@ -74,7 +74,7 @@ public class Deserializer {
 	}
 	
 	//Return XML Document representation of a String
-	private Document stringToDoc(String docString)
+	public Document stringToDoc(String docString)
 	{
 		 Document doc = null;	
 		 try
