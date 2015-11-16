@@ -41,21 +41,32 @@ public class Serializer {
 	public Document serialize(Object object) {
 
 			// check if object == null		
-		if(serializedObjects.contains(object)) 
+		if(serializedObjects.contains(object) && object != null) 
 			throw new IllegalArgumentException();
 		
 			//if object has not yet been serialized
 		serializedObjects.add(object);
 
-		if(currentElement++ == 0) {
+		if(++currentElement == 0) {
 			doc = new Document();
 			root = new Element("serialized");
 			doc.setRootElement(root);
 		}
 
-		Class<?> c = object.getClass();
 		int id = getID(object);
 
+			//try to get class of object
+		Class<?> c;
+		
+			//object has been instantiated
+		if(object != null)
+			c = object.getClass();
+		
+			//object has not been instantiated
+		else
+			c = new Object().getClass();
+		
+			
 		Element objectElement = new Element("object");
 		objectElement.setAttribute( new Attribute("class", c.getName()) );
 		objectElement.setAttribute(new Attribute("id", Integer.toString(id)) );
@@ -83,10 +94,9 @@ public class Serializer {
 						ref.setText(Integer.toString(id));
 						objectElement.addContent(ref);
 					}
-					
-					for(int j = 0; j < Array.getLength(array); j++) 		//TODO: this may need to get outside loop
-						serialize(Array.get(array, j));
 				}
+				for(int j = 0; j < Array.getLength(array); j++) 		//TODO: this may need to get outside loop
+					serialize(Array.get(array, j));
 			}
 		}
 			//Object is not an array
@@ -132,14 +142,16 @@ public class Serializer {
 				if(field.getType().isPrimitive()) {
 					Element value = new Element("value");
 					value.setText(field.get(object).toString());
+					element.addContent(value);
 				}
 				else {
-					Integer id = getID(field.get(object));
+					int id = getID(field.get(object));
 					Element reference = new Element("reference");
+					reference.setText(Integer.toString(id));
 					element.addContent(reference);
-					reference.setText(id.toString());
 
-					serialize(field.get(object));		// recursively serialize object
+					if (field.get(object) != null)
+						serialize(field.get(object));		// recursively serialize object
 				}
 
 				elements.add(element);

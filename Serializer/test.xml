@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serialized><object class="objects.Object4" id="0"><field name="listObj" declaringClass="objects.Object4"><reference>1</reference></field></object><object class="java.util.ArrayList" id="1"><field name="elementData" declaringClass="java.util.ArrayList"><reference>2</reference></field><field name="size" declaringClass="java.util.ArrayList"><value>0</value></field><field name="modCount" declaringClass="java.util.ArrayList"><value>0</value></field></object><object class="[Ljava.lang.Object;" id="2" length="0" /></serialized>
+
