@@ -3,6 +3,7 @@ package main;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import org.jdom2.Document;
 import org.jdom2.output.XMLOutputter;
@@ -10,7 +11,7 @@ import org.jdom2.output.XMLOutputter;
 public class Sender {
 
 	private static Socket sock;
-	private static int port = 3000;
+	private static int port = 8001;
 	private static String ip = "localhost";
 	
 	private static ObjectCreator objCreator;
@@ -19,12 +20,11 @@ public class Sender {
 	
 	public static void main(String[] args) throws Exception{
 		initialize(args);	
-		
-
 				
 		try{
 				//prompt for user input
-			System.out.println("Enter your choice of object, from 0 (least complex) to 4 (most complex)");
+			System.out.println("=========================");
+			System.out.println("Sender: Enter your choice of object, from 0 (least complex) to 4 (most complex)");
 			scanner = new Scanner(System.in );
 			String in = scanner.next();
 			
@@ -41,22 +41,29 @@ public class Sender {
 			String output = outputter.outputString(doc);
 			
 				//connect to a remote socket
-			System.out.println("Connecting to \"" + ip + "\" on port " + port + "...");
+			System.out.println("Sender: Connecting to \"" + ip + "\" on port " + port + "...");
 			sock = new Socket(ip, port);		
 			
 				//write to a remote socket
-			System.out.println("Sending XML file...");
+			System.out.print("Sender: Sending XML file.");
+			for (int i = 0; i < 10; i++){
+				System.out.print(".");
+				TimeUnit.MILLISECONDS.sleep(100);
+			}
+			System.out.println();
 			OutputStream out = sock.getOutputStream();
 			
 			out.write(output.getBytes());
 			out.flush();
-			
-				//clean up
-			System.out.println("Exiting...");
-			sock.close();
 		}
 		catch(Exception e){
 			e.printStackTrace();
+		}
+		finally{
+				//clean up
+			System.out.println("Sender: Exiting Sender...");
+			System.out.println("=========================");
+			sock.close();
 		}
 	}
 	
@@ -74,7 +81,7 @@ public class Sender {
 			}
 		}
 		catch (Exception e){
-			System.out.println("Invalid input. Format: Sender <ip> <port>"); 
+			System.out.println("Sender: Invalid input. Format: Sender <ip> <port>"); 
 		}
 	}
 

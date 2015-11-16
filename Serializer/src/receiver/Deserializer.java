@@ -1,4 +1,4 @@
-package main;
+package receiver;
 
 public class Deserializer {
 
