@@ -42,7 +42,7 @@ public class Sender {
 			
 			
 			//allow user to edit object
-			//TODO lol eventually (use reflection to edit each field
+			//TODO lol eventually (use reflection to edit each field)
 			
 			 //serialize object and convert to string
 			Document doc = ser.serialize(obj);

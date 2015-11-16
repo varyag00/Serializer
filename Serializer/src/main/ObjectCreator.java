@@ -37,11 +37,7 @@ public class ObjectCreator {
 				System.out.println("Invalid selection. Selection must be an integer between 0 and 4");
 				throw new IllegalArgumentException();
 		}
-
-		//TODO: allow user set instance variables !!!!!!!
 		
 		return obj; 
-		
-		
 	}
 }
