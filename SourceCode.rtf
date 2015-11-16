@@ -1,0 +1,711 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf110
+{\fonttbl\f0\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red98\green98\blue98;\red221\green40\blue103;\red217\green232\blue247;
+\red230\green230\blue250;\red18\green144\blue195;\red249\green250\blue244;\red30\green181\blue64;\red121\green171\blue255;
+\red237\green127\blue72;\red104\green151\blue187;\red255\green191\blue38;\red167\green236\blue33;\red141\green218\blue248;
+\red23\green198\blue163;\red102\green225\blue248;\red215\green131\blue127;\red205\green246\blue104;\red150\green236\blue63;
+\red154\green140\blue124;\red204\green129\blue186;\red62\green171\blue230;\red128\green246\blue167;\red128\green242\blue246;
+}
+\margl1440\margr1440\vieww12600\viewh14500\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs22 \cf2 /* Name:		J. \ul Daniel\ulnone  \ul Gonzalez\cf0 \ulnone \
+\cf2  * UCID:		10058656\cf0 \
+\cf2  * Class:		CPSC 501\cf0 \
+\cf2  * Ass:			3\cf0 \
+\cf2  * \cf0 \
+\cf2  * Sources: 	1. Used code provided by \ul Waliur\ulnone  \ul Rahman\ulnone  and Lee \ul Ringham\ulnone  as templates for \ul Serializer\ulnone , Sender and Receiver\cf0 \
+\cf2  * 				2. Used my own CPSC 501 Assignment 2 Object Inspect as a template for the Object Visualizer\cf0 \
+\cf2  */\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 package\cf4  main\cf5 ;\cf0 \
+\
+\cf3 import\cf4  objects\cf5 .*;\cf0 \
+\
+\cf3 public\cf4  \cf3 class\cf4  \cf6 ObjectCreator\cf4  \cf7 \{\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 		\cf2 //creates a new object based on input type and prompts user for instance variable values\cf0 \
+\cf4 	\cf3 public\cf4  \cf6 Object\cf4  \cf8 createObject\cf7 (\cf3 int\cf4  \cf9 selection\cf7 )\cf4  \cf3 throws\cf4  \cf6 IllegalArgumentException\cf7 \{\cf0 \
+\cf4 		\cf6 Object\cf4  \cf10 obj\cf5 ;\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf3 switch\cf4  \cf7 (\cf9 selection\cf7 )\{\cf0 \
+\cf4 			\cf3 case\cf4  \cf11 0\cf5 :\cf4  \cf0 \
+\cf4 				\cf12 obj\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Object0\cf7 ()\cf5 ;\cf0 \
+\cf4 				\cf3 break\cf5 ;\cf0 \
+\cf4 			\cf3 case\cf4  \cf11 1\cf5 :\cf0 \
+\cf4 				\cf12 obj\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Object1\cf7 ()\cf5 ;\cf0 \
+\cf4 				\cf3 break\cf5 ;\cf0 \
+\cf4 			\cf3 case\cf4  \cf11 2\cf5 :\cf0 \
+\cf4 				\cf12 obj\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Object2\cf7 ()\cf5 ;\cf0 \
+\cf4 				\cf3 break\cf5 ;\cf0 \
+\cf4 			\cf3 case\cf4  \cf11 3\cf5 :\cf0 \
+\cf4 				\cf12 obj\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Object3\cf7 ()\cf5 ;\cf0 \
+\cf4 				\cf3 break\cf5 ;\cf0 \
+\cf4 			\cf3 case\cf4  \cf11 4\cf5 :\cf0 \
+\cf4 				\cf12 obj\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Object4\cf7 ()\cf5 ;\cf0 \
+\cf4 				\cf3 break\cf5 ;\cf0 \
+\cf4 			\cf3 default\cf5 :\cf0 \
+\cf4 				\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "Invalid selection. Selection must be an integer between 0 and 4"\cf7 )\cf5 ;\cf0 \
+\cf4 				\cf3 throw\cf4  \cf3 new\cf4  \cf13 IllegalArgumentException\cf7 ()\cf5 ;\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf3 return\cf4  \cf12 obj\cf5 ;\cf4  \cf0 \
+\cf4 	\cf7 \}\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf7 \}\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf2 /* Name:		J. \ul Daniel\ulnone  \ul Gonzalez\cf0 \ulnone \
+\cf2  * UCID:		10058656\cf0 \
+\cf2  * Class:		CPSC 501\cf0 \
+\cf2  * Ass:			3\cf0 \
+\cf2  * \cf0 \
+\cf2  * Sources: 	1. Used code provided by \ul Waliur\ulnone  \ul Rahman\ulnone  and Lee \ul Ringham\ulnone  as templates for \ul Serializer\ulnone , Sender and Receiver\cf0 \
+\cf2  * 				2. Used my own CPSC 501 Assignment 2 Object Inspect as a template for the Object Visualizer\cf0 \
+\cf2  */\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 package\cf4  main\cf5 ;\cf0 \
+\
+\cf3 import\cf4  \cf4 \ul \ulc4 java\cf5 \ulc5 .\cf4 \ulc4 beans\cf5 \ulc5 .\cf4 \ulc4 XMLDecoder\cf5 \ulnone ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 io\cf5 .\cf4 PrintWriter\cf5 ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 lang\cf5 .\cf4 reflect\cf5 .\cf4 Array\cf5 ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 lang\cf5 .\cf4 reflect\cf5 .\cf4 Field\cf5 ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 lang\cf5 .\cf4 reflect\cf5 .\cf4 Modifier\cf5 ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 util\cf5 .\cf4 ArrayList\cf5 ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 util\cf5 .\cf4 HashMap\cf5 ;\cf0 \
+\
+\cf3 import\cf4  org\cf5 .\cf4 jdom2\cf5 .\cf4 Attribute\cf5 ;\cf0 \
+\cf3 import\cf4  org\cf5 .\cf4 jdom2\cf5 .\cf4 Document\cf5 ;\cf0 \
+\cf3 import\cf4  org\cf5 .\cf4 jdom2\cf5 .\cf4 Element\cf5 ;\cf0 \
+\cf3 import\cf4  org\cf5 .\cf4 jdom2\cf5 .\cf4 output\cf5 .\cf4 XMLOutputter\cf5 ;\cf0 \
+\
+\cf3 public\cf4  \cf3 class\cf4  \cf6 Serializer\cf4  \cf7 \{\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 	\cf3 private\cf4  \cf6 Document\cf4  \cf16 doc\cf4  \cf5 =\cf4  \cf3 null\cf5 ;\cf0 \
+\cf4 	\cf3 private\cf4  \cf6 Element\cf4  \cf16 root\cf5 ;\cf4  \cf0 \
+\cf4 	\cf3 private\cf4  \cf6 Integer\cf4  \cf16 referenceID\cf4  \cf5 =\cf4  \cf11 0\cf5 ;\cf0 \
+\cf4 	\cf3 private\cf4  \cf6 HashMap\cf5 <\cf17 Object\cf5 ,\cf4  \cf17 Integer\cf5 >\cf4  \cf16 referenceMap\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 HashMap\cf5 <\cf17 Object\cf5 ,\cf4  \cf17 Integer\cf5 >\cf7 ()\cf5 ;\cf0 \
+\
+\cf4 	\cf3 private\cf4  \cf3 int\cf4  \cf16 currentElement\cf4  \cf5 =\cf4  \cf5 -\cf11 1\cf5 ;\cf0 \
+\cf4 	\cf3 private\cf4  \cf6 ArrayList\cf5 <\cf17 Object\cf5 >\cf4  \cf16 serializedObjects\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 ArrayList\cf5 <\cf17 Object\cf5 >\cf7 ()\cf5 ;\cf0 \
+\
+\cf4 	\cf3 public\cf4  \cf8 Serializer\cf7 ()\{\cf0 \
+\cf4 		\cf0 \
+\cf4 	\cf7 \}\cf0 \
+\
+\cf4 	\cf3 public\cf4  \cf3 void\cf4  \cf8 testSerializer\cf7 (\cf6 Document\cf4  \cf9 doc\cf7 )\cf4  \cf3 throws\cf4  \cf6 Exception\cf7 \{\cf0 \
+\cf4 		\cf6 XMLOutputter\cf4  \cf10 outputter\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 XMLOutputter\cf7 ()\cf5 ;\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf6 String\cf4  \cf10 output\cf4  \cf5 =\cf4  \cf12 outputter\cf5 .\cf13 outputString\cf7 (\cf9 doc\cf7 )\cf5 ;\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf2 //System.out.println(output);\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf6 PrintWriter\cf4  \cf10 out\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 PrintWriter\cf7 (\cf15 "test.xml"\cf7 )\cf5 ;\cf0 \
+\cf4 		\cf12 out\cf5 .\cf13 println\cf7 (\cf12 output\cf7 )\cf5 ;\cf0 \
+\cf4 		\cf12 out\cf5 .\cf13 close\cf7 ()\cf5 ;\cf0 \
+\cf4 	\cf7 \}\cf0 \
+\cf4 	\cf0 \
+\cf4 	\cf3 public\cf4  \cf6 Document\cf4  \cf8 serialize\cf7 (\cf6 Object\cf4  \cf9 object\cf7 )\cf4  \cf7 \{\cf0 \
+\
+\cf4 			\cf2 // check if object == null		\cf0 \
+\cf4 		\cf3 if\cf7 (\cf16 serializedObjects\cf5 .\cf13 contains\cf7 (\cf9 object\cf7 )\cf4  \cf5 &&\cf4  \cf9 object\cf4  \cf5 !=\cf4  \cf3 null\cf7 )\cf4  \cf0 \
+\cf4 			\cf3 throw\cf4  \cf3 new\cf4  \cf13 IllegalArgumentException\cf7 ()\cf5 ;\cf0 \
+\cf4 		\cf0 \
+\cf4 			\cf2 //if object has not yet been serialized\cf0 \
+\cf4 		\cf16 serializedObjects\cf5 .\cf13 add\cf7 (\cf9 object\cf7 )\cf5 ;\cf0 \
+\
+\cf4 		\cf3 if\cf7 (\cf5 ++\cf16 currentElement\cf4  \cf5 ==\cf4  \cf11 0\cf7 )\cf4  \cf7 \{\cf0 \
+\cf4 			\cf16 doc\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Document\cf7 ()\cf5 ;\cf0 \
+\cf4 			\cf16 root\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Element\cf7 (\cf15 "serialized"\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf16 doc\cf5 .\cf13 setRootElement\cf7 (\cf16 root\cf7 )\cf5 ;\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\
+\cf4 		\cf3 int\cf4  \cf10 id\cf4  \cf5 =\cf4  \cf13 getID\cf7 (\cf9 object\cf7 )\cf5 ;\cf0 \
+\
+\cf4 			\cf2 //try to get class of object\cf0 \
+\cf4 		\cf6 Class\cf5 <?>\cf4  \cf10 c\cf5 ;\cf0 \
+\cf4 		\cf0 \
+\cf4 			\cf2 //object has been instantiated\cf0 \
+\cf4 		\cf3 if\cf7 (\cf9 object\cf4  \cf5 !=\cf4  \cf3 null\cf7 )\cf0 \
+\cf4 			\cf12 c\cf4  \cf5 =\cf4  \cf9 object\cf5 .\cf18 getClass\cf7 ()\cf5 ;\cf0 \
+\cf4 		\cf0 \
+\cf4 			\cf2 //object has not been instantiated\cf0 \
+\cf4 		\cf3 else\cf0 \
+\cf4 			\cf12 c\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Object\cf7 ()\cf5 .\cf18 getClass\cf7 ()\cf5 ;\cf0 \
+\cf4 		\cf0 \
+\cf4 			\cf0 \
+\cf4 		\cf6 Element\cf4  \cf10 objectElement\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Element\cf7 (\cf15 "object"\cf7 )\cf5 ;\cf0 \
+\cf4 		\cf12 objectElement\cf5 .\cf13 setAttribute\cf7 (\cf4  \cf3 new\cf4  \cf13 Attribute\cf7 (\cf15 "class"\cf5 ,\cf4  \cf12 c\cf5 .\cf13 getName\cf7 ())\cf4  \cf7 )\cf5 ;\cf0 \
+\cf4 		\cf12 objectElement\cf5 .\cf13 setAttribute\cf7 (\cf3 new\cf4  \cf13 Attribute\cf7 (\cf15 "id"\cf5 ,\cf4  \cf6 Integer\cf5 .\cf19 toString\cf7 (\cf12 id\cf7 ))\cf4  \cf7 )\cf5 ;\cf0 \
+\cf4 		\cf16 doc\cf5 .\cf13 getRootElement\cf7 ()\cf5 .\cf13 addContent\cf7 (\cf12 objectElement\cf7 )\cf5 ;\cf0 \
+\
+\cf4 			\cf2 //if object is an array\cf0 \
+\cf4 		\cf3 if\cf7 (\cf12 c\cf5 .\cf13 isArray\cf7 ())\cf4  \cf7 \{\cf0 \
+\cf4 			\cf6 Object\cf4  \cf10 array\cf4  \cf5 =\cf4  \cf9 object\cf5 ;\cf0 \
+\cf4 			\cf12 objectElement\cf5 .\cf13 setAttribute\cf7 (\cf3 new\cf4  \cf13 Attribute\cf7 (\cf15 "length"\cf5 ,\cf4  \cf6 Integer\cf5 .\cf19 toString\cf7 (\cf6 Array\cf5 .\cf19 getLength\cf7 (\cf12 array\cf7 )))\cf4  \cf7 )\cf5 ;\cf0 \
+\
+\cf4 				\cf2 //if object is an array of primitives\cf0 \
+\cf4 			\cf3 if\cf7 (\cf12 c\cf5 .\cf13 getComponentType\cf7 ()\cf5 .\cf13 isPrimitive\cf7 ())\cf4  \cf7 \{\cf0 \
+\cf4 				\cf3 for\cf4  \cf7 (\cf3 int\cf4  \cf10 i\cf4  \cf5 =\cf4  \cf11 0\cf5 ;\cf4  \cf12 i\cf4  \cf5 <\cf4  \cf6 Array\cf5 .\cf19 getLength\cf7 (\cf12 array\cf7 )\cf5 ;\cf4  \cf12 i\cf5 ++\cf7 )\{\cf0 \
+\cf4 					\cf6 Element\cf4  \cf10 value\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Element\cf7 (\cf15 "value"\cf7 )\cf5 ;\cf4  \cf0 \
+\cf4 					\cf12 value\cf5 .\cf13 setText\cf7 (\cf6 Array\cf5 .\cf19 get\cf7 (\cf12 array\cf5 ,\cf4  \cf12 i\cf7 )\cf5 .\cf18 toString\cf7 ())\cf5 ;\cf4  		\cf2 //\cf20 TODO\cf2  this may be getting the reference to the object rather than the value\cf0 \
+\cf4 					\cf12 objectElement\cf5 .\cf13 addContent\cf7 (\cf12 value\cf7 )\cf5 ;\cf0 \
+\cf4 				\cf7 \}\cf0 \
+\cf4 			\cf7 \}\cf0 \
+\cf4 				\cf2 //if object is an array of non-primitive objects\cf0 \
+\cf4 			\cf3 else\cf4  \cf7 \{\cf0 \
+\cf4 				\cf3 for\cf7 (\cf3 int\cf4  \cf10 i\cf4  \cf5 =\cf4  \cf11 0\cf5 ;\cf4  \cf12 i\cf4  \cf5 <\cf4  \cf6 Array\cf5 .\cf19 getLength\cf7 (\cf12 array\cf7 )\cf5 ;\cf4  \cf12 i\cf5 ++\cf7 )\{\cf0 \
+\cf4 					\cf6 Element\cf4  \cf10 ref\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Element\cf7 (\cf15 "reference"\cf7 )\cf5 ;\cf0 \
+\cf4 					\cf12 id\cf4  \cf5 =\cf4  \cf13 getID\cf7 (\cf6 Array\cf5 .\cf19 get\cf7 (\cf12 array\cf5 ,\cf4  \cf12 i\cf7 ))\cf5 ;\cf0 \
+\cf4 					\cf3 if\cf7 (\cf12 id\cf4  \cf5 !=\cf4  \cf5 -\cf11 1\cf7 )\cf4  \cf7 \{\cf0 \
+\cf4 						\cf12 ref\cf5 .\cf13 setText\cf7 (\cf6 Integer\cf5 .\cf19 toString\cf7 (\cf12 id\cf7 ))\cf5 ;\cf0 \
+\cf4 						\cf12 objectElement\cf5 .\cf13 addContent\cf7 (\cf12 ref\cf7 )\cf5 ;\cf0 \
+\cf4 					\cf7 \}\cf0 \
+\cf4 				\cf7 \}\cf0 \
+\cf4 				\cf3 for\cf7 (\cf3 int\cf4  \cf10 j\cf4  \cf5 =\cf4  \cf11 0\cf5 ;\cf4  \cf12 j\cf4  \cf5 <\cf4  \cf6 Array\cf5 .\cf19 getLength\cf7 (\cf12 array\cf7 )\cf5 ;\cf4  \cf12 j\cf5 ++\cf7 )\cf4  		\cf2 //\cf20 TODO\cf2 : this may need to get outside loop\cf0 \
+\cf4 					\cf13 serialize\cf7 (\cf6 Array\cf5 .\cf19 get\cf7 (\cf12 array\cf5 ,\cf4  \cf12 j\cf7 ))\cf5 ;\cf0 \
+\cf4 			\cf7 \}\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 			\cf2 //Object is not an array\cf0 \
+\cf4 		\cf3 else\cf4  \cf7 \{\cf0 \
+\cf4 			\cf6 Class\cf5 <?>\cf4  \cf10 tmpClass\cf4  \cf5 =\cf4  \cf12 c\cf5 ;\cf0 \
+\cf4 			\cf3 while\cf7 (\cf12 tmpClass\cf4  \cf5 !=\cf4  \cf3 null\cf7 )\cf4  \cf7 \{\cf0 \
+\cf4 				\cf6 Field\cf7 []\cf4  \cf10 fields\cf4  \cf5 =\cf4  \cf12 tmpClass\cf5 .\cf13 getDeclaredFields\cf7 ()\cf5 ;\cf0 \
+\cf4 				\cf6 ArrayList\cf5 <\cf17 Element\cf5 >\cf4  \cf10 fieldXML\cf4  \cf5 =\cf4  \cf13 serializeFields\cf7 (\cf12 fields\cf5 ,\cf4  \cf9 object\cf7 )\cf5 ;\cf0 \
+\cf4 				\cf0 \
+\cf4 				\cf3 for\cf7 (\cf6 Element\cf4  \cf10 element\cf5 :\cf4  \cf12 fieldXML\cf7 )\cf0 \
+\cf4 					\cf12 objectElement\cf5 .\cf13 addContent\cf7 (\cf12 element\cf7 )\cf5 ;\cf0 \
+\cf4 				\cf0 \
+\cf4 				\cf12 tmpClass\cf4  \cf5 =\cf4  \cf12 tmpClass\cf5 .\cf13 getSuperclass\cf7 ()\cf5 ;\cf0 \
+\cf4 			\cf7 \}\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf3 if\cf7 (\cf16 currentElement\cf4  \cf5 ==\cf4  \cf11 0\cf7 )\cf4  \cf7 \{\cf0 \
+\cf4 			\cf16 serializedObjects\cf5 .\cf13 clear\cf7 ()\cf5 ;\cf0 \
+\cf4 			\cf16 referenceID\cf4  \cf5 =\cf4  \cf11 0\cf5 ;\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf3 return\cf4  \cf16 doc\cf5 ;\cf4 	\cf0 \
+\cf4 	\cf7 \}\cf0 \
+\cf4 	\cf0 \
+\cf4 	\cf3 private\cf4  \cf6 ArrayList\cf5 <\cf17 Element\cf5 >\cf4  \cf8 serializeFields\cf7 (\cf6 Field\cf7 []\cf4  \cf9 fields\cf5 ,\cf4  \cf6 Object\cf4  \cf9 object\cf7 )\cf4  \cf7 \{\cf0 \
+\cf4 		\cf6 ArrayList\cf5 <\cf17 Element\cf5 >\cf4  \cf10 elements\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 ArrayList\cf5 <\cf17 Element\cf5 >\cf7 ()\cf5 ;\cf0 \
+\
+\cf4 		\cf3 for\cf7 (\cf3 int\cf4  \cf10 i\cf4  \cf5 =\cf4  \cf11 0\cf5 ;\cf4  \cf12 i\cf4  \cf5 <\cf4  \cf9 fields\cf5 .\cf16 length\cf5 ;\cf4  \cf12 i\cf5 ++\cf7 )\cf4  \cf7 \{\cf0 \
+\cf4 			\cf0 \
+\cf4 			\cf2 // skip static fields\cf0 \
+\cf4 			\cf3 if\cf7 (\cf6 Modifier\cf5 .\cf19 isStatic\cf7 (\cf9 fields\cf7 [\cf12 i\cf7 ]\cf5 .\cf13 getModifiers\cf7 ()))\cf0 \
+\cf4 				\cf3 continue\cf5 ;\cf0 \
+\cf4 			\cf0 \
+\cf4 			\cf3 try\cf4  \cf7 \{\cf0 \
+\cf4 				\cf6 Field\cf4  \cf10 field\cf4  \cf5 =\cf4  \cf9 fields\cf7 [\cf12 i\cf7 ]\cf5 ;\cf0 \
+\cf4 				\cf3 if\cf7 (\cf5 !\cf12 field\cf5 .\cf13 isAccessible\cf7 ())\cf0 \
+\cf4 					\cf12 field\cf5 .\cf13 setAccessible\cf7 (\cf3 true\cf7 )\cf5 ;\cf0 \
+\cf4 				\cf0 \
+\cf4 				\cf6 Element\cf4  \cf10 element\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Element\cf7 (\cf15 "field"\cf7 )\cf5 ;\cf0 \
+\cf4 				\cf12 element\cf5 .\cf13 setAttribute\cf7 (\cf3 new\cf4  \cf13 Attribute\cf7 (\cf15 "name"\cf5 ,\cf4  \cf12 field\cf5 .\cf13 getName\cf7 ()))\cf5 ;\cf0 \
+\cf4 				\cf12 element\cf5 .\cf13 setAttribute\cf7 (\cf3 new\cf4  \cf13 Attribute\cf7 (\cf15 "declaringClass"\cf5 ,\cf4  \cf9 object\cf5 .\cf18 getClass\cf7 ()\cf5 .\cf13 getName\cf7 ()))\cf5 ;\cf0 \
+\
+\cf4 				\cf3 if\cf7 (\cf12 field\cf5 .\cf13 getType\cf7 ()\cf5 .\cf13 isPrimitive\cf7 ())\cf4  \cf7 \{\cf0 \
+\cf4 					\cf6 Element\cf4  \cf10 value\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Element\cf7 (\cf15 "value"\cf7 )\cf5 ;\cf0 \
+\cf4 					\cf12 value\cf5 .\cf13 setText\cf7 (\cf12 field\cf5 .\cf13 get\cf7 (\cf9 object\cf7 )\cf5 .\cf18 toString\cf7 ())\cf5 ;\cf0 \
+\cf4 					\cf12 element\cf5 .\cf13 addContent\cf7 (\cf12 value\cf7 )\cf5 ;\cf0 \
+\cf4 				\cf7 \}\cf0 \
+\cf4 				\cf3 else\cf4  \cf7 \{\cf0 \
+\cf4 					\cf3 int\cf4  \cf10 id\cf4  \cf5 =\cf4  \cf13 getID\cf7 (\cf12 field\cf5 .\cf13 get\cf7 (\cf9 object\cf7 ))\cf5 ;\cf0 \
+\cf4 					\cf6 Element\cf4  \cf10 reference\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Element\cf7 (\cf15 "reference"\cf7 )\cf5 ;\cf0 \
+\cf4 					\cf12 reference\cf5 .\cf13 setText\cf7 (\cf6 Integer\cf5 .\cf19 toString\cf7 (\cf12 id\cf7 ))\cf5 ;\cf0 \
+\cf4 					\cf12 element\cf5 .\cf13 addContent\cf7 (\cf12 reference\cf7 )\cf5 ;\cf0 \
+\
+\cf4 					\cf3 if\cf4  \cf7 (\cf12 field\cf5 .\cf13 get\cf7 (\cf9 object\cf7 )\cf4  \cf5 !=\cf4  \cf3 null\cf7 )\cf0 \
+\cf4 						\cf13 serialize\cf7 (\cf12 field\cf5 .\cf13 get\cf7 (\cf9 object\cf7 ))\cf5 ;\cf4 		\cf2 // recursively serialize object\cf0 \
+\cf4 				\cf7 \}\cf0 \
+\
+\cf4 				\cf12 elements\cf5 .\cf13 add\cf7 (\cf12 element\cf7 )\cf5 ;\cf0 \
+\
+\cf4 			\cf7 \}\cf4  \cf3 catch\cf4  \cf7 (\cf6 Exception\cf4  \cf10 e\cf7 )\cf4  \cf7 \{\cf0 \
+\cf4 				\cf12 e\cf5 .\cf13 printStackTrace\cf7 ()\cf5 ;\cf0 \
+\cf4 			\cf7 \}\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 		\cf3 return\cf4  \cf12 elements\cf5 ;\cf0 \
+\cf4 	\cf7 \}\cf0 \
+\
+\cf4 	\cf3 private\cf4  \cf3 int\cf4  \cf8 getID\cf7 (\cf6 Object\cf4  \cf9 object\cf7 )\cf4  \cf7 \{\cf0 \
+\cf4 		\cf6 Integer\cf4  \cf10 id\cf4  \cf5 =\cf4  \cf16 referenceID\cf5 ;\cf0 \
+\
+\cf4 		\cf3 if\cf7 (\cf16 referenceMap\cf5 .\cf13 containsKey\cf7 (\cf9 object\cf7 ))\cf0 \
+\cf4 			\cf12 id\cf4  \cf5 =\cf4  \cf16 referenceMap\cf5 .\cf13 get\cf7 (\cf9 object\cf7 )\cf5 ;\cf0 \
+\cf4 		\cf3 else\cf4  \cf7 \{\cf0 \
+\cf4 			\cf16 referenceMap\cf5 .\cf13 put\cf7 (\cf9 object\cf5 ,\cf4  \cf12 id\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf16 referenceID\cf5 ++;\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 		\cf3 return\cf4  \cf12 id\cf5 ;\cf0 \
+\cf4 	\cf7 \}\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf7 \}\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 /* Name:		J. \ul Daniel\ulnone  \ul Gonzalez\cf0 \ulnone \
+\cf2  * UCID:		10058656\cf0 \
+\cf2  * Class:		CPSC 501\cf0 \
+\cf2  * Ass:			3\cf0 \
+\cf2  * \cf0 \
+\cf2  * Sources: 	1. Used code provided by \ul Waliur\ulnone  \ul Rahman\ulnone  and Lee \ul Ringham\ulnone  as templates for \ul Serializer\ulnone , Sender and Receiver\cf0 \
+\cf2  * 				2. Used my own CPSC 501 Assignment 2 Object Inspect as a template for the Object Visualizer\cf0 \
+\cf2  */\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 package\cf4  main\cf5 ;\cf0 \
+\
+\cf3 import\cf4  java\cf5 .\cf4 io\cf5 .\cf4 OutputStream\cf5 ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 net\cf5 .\cf4 Socket\cf5 ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 util\cf5 .\cf4 Scanner\cf5 ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 util\cf5 .\cf4 concurrent\cf5 .\cf4 TimeUnit\cf5 ;\cf0 \
+\
+\cf3 import\cf4  org\cf5 .\cf4 jdom2\cf5 .\cf4 Document\cf5 ;\cf0 \
+\cf3 import\cf4  org\cf5 .\cf4 jdom2\cf5 .\cf4 output\cf5 .\cf4 XMLOutputter\cf5 ;\cf0 \
+\
+\cf3 public\cf4  \cf3 class\cf4  \cf6 Sender\cf4  \cf7 \{\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 	\cf3 private\cf4  \cf3 static\cf4  \cf6 Socket\cf4  \cf14 sock\cf5 ;\cf0 \
+\cf4 	\cf3 private\cf4  \cf3 static\cf4  \cf3 int\cf4  \cf14 port\cf4  \cf5 =\cf4  \cf11 8001\cf5 ;\cf0 \
+\cf4 	\cf3 private\cf4  \cf3 static\cf4  \cf6 String\cf4  \cf14 ip\cf4  \cf5 =\cf4  \cf15 "localhost"\cf5 ;\cf0 \
+\cf4 	\cf0 \
+\cf4 	\cf3 private\cf4  \cf3 static\cf4  \cf6 ObjectCreator\cf4  \cf14 objCreator\cf5 ;\cf0 \
+\cf4 	\cf3 private\cf4  \cf3 static\cf4  \cf6 Serializer\cf4  \cf14 ser\cf5 ;\cf0 \
+\cf4 	\cf3 private\cf4  \cf3 static\cf4  \cf6 Scanner\cf4  \cf14 scanner\cf5 ;\cf0 \
+\cf4 	\cf0 \
+\cf4 	\cf3 public\cf4  \cf3 static\cf4  \cf3 void\cf4  \cf8 main\cf7 (\cf6 String\cf7 []\cf4  \cf9 args\cf7 )\cf4  \cf3 throws\cf4  \cf6 Exception\cf7 \{\cf0 \
+\cf4 		\cf19 initialize\cf7 (\cf9 args\cf7 )\cf5 ;\cf4 	\cf0 \
+\cf4 				\cf0 \
+\cf4 		\cf3 try\cf7 \{\cf0 \
+\cf4 				\cf2 //prompt for user input\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "========================="\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "Sender: Enter your choice of object, from 0 (least complex) to 4 (most complex)"\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf14 scanner\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Scanner\cf7 (\cf6 System\cf5 .\cf14 in\cf4  \cf7 )\cf5 ;\cf0 \
+\cf4 			\cf6 String\cf4  \cf10 in\cf4  \cf5 =\cf4  \cf14 scanner\cf5 .\cf13 next\cf7 ()\cf5 ;\cf0 \
+\cf4 			\cf0 \
+\cf4 				\cf2 //create specified object\cf0 \
+\cf4 			\cf6 Object\cf4  \cf10 obj\cf4  \cf5 =\cf4  \cf14 objCreator\cf5 .\cf13 createObject\cf7 (\cf6 Integer\cf5 .\cf19 parseInt\cf7 (\cf12 in\cf7 ))\cf5 ;\cf0 \
+\cf4 			\cf0 \
+\cf4 			\cf0 \
+\cf4 			\cf2 //allow user to edit object\cf0 \
+\cf4 			\cf0 \
+\cf4 			 \cf2 //serialize object and convert to string\cf0 \
+\cf4 			\cf6 Document\cf4  \cf10 doc\cf4  \cf5 =\cf4  \cf14 ser\cf5 .\cf13 serialize\cf7 (\cf12 obj\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf6 XMLOutputter\cf4  \cf10 outputter\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 XMLOutputter\cf7 ()\cf5 ;\cf0 \
+\cf4 			\cf6 String\cf4  \cf10 output\cf4  \cf5 =\cf4  \cf12 outputter\cf5 .\cf13 outputString\cf7 (\cf12 doc\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf0 \
+\cf4 				\cf2 //connect to a remote socket\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "Sender: Connecting to \\""\cf4  \cf5 +\cf4  \cf14 ip\cf4  \cf5 +\cf4  \cf15 "\\" on port "\cf4  \cf5 +\cf4  \cf14 port\cf4  \cf5 +\cf4  \cf15 "..."\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf14 sock\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Socket\cf7 (\cf14 ip\cf5 ,\cf4  \cf14 port\cf7 )\cf5 ;\cf4 		\cf0 \
+\cf4 			\cf0 \
+\cf4 				\cf2 //write to a remote socket\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 print\cf7 (\cf15 "Sender: Sending XML file."\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf3 for\cf4  \cf7 (\cf3 int\cf4  \cf10 i\cf4  \cf5 =\cf4  \cf11 0\cf5 ;\cf4  \cf12 i\cf4  \cf5 <\cf4  \cf11 10\cf5 ;\cf4  \cf12 i\cf5 ++\cf7 )\{\cf0 \
+\cf4 				\cf6 System\cf5 .\cf14 out\cf5 .\cf13 print\cf7 (\cf15 "."\cf7 )\cf5 ;\cf0 \
+\cf4 				\cf21 TimeUnit\cf5 .\cf14 MILLISECONDS\cf5 .\cf13 sleep\cf7 (\cf11 100\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf7 \}\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 ()\cf5 ;\cf0 \
+\cf4 			\cf22 OutputStream\cf4  \cf10 out\cf4  \cf5 =\cf4  \cf14 sock\cf5 .\cf13 getOutputStream\cf7 ()\cf5 ;\cf0 \
+\cf4 			\cf0 \
+\cf4 			\cf12 out\cf5 .\cf13 write\cf7 (\cf12 output\cf5 .\cf13 getBytes\cf7 ())\cf5 ;\cf0 \
+\cf4 			\cf12 out\cf5 .\cf13 flush\cf7 ()\cf5 ;\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 		\cf3 catch\cf7 (\cf6 Exception\cf4  \cf10 e\cf7 )\{\cf0 \
+\cf4 			\cf12 e\cf5 .\cf13 printStackTrace\cf7 ()\cf5 ;\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 		\cf3 finally\cf7 \{\cf0 \
+\cf4 				\cf2 //clean up\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "Sender: Exiting Sender..."\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "========================="\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf14 sock\cf5 .\cf13 close\cf7 ()\cf5 ;\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 	\cf7 \}\cf0 \
+\cf4 	\cf0 \
+\cf4 	\cf0 \
+\cf4 	\cf3 public\cf4  \cf3 static\cf4  \cf3 void\cf4  \cf8 initialize\cf7 (\cf6 String\cf7 []\cf4  \cf9 args\cf7 )\cf4  \cf3 throws\cf4  \cf6 Exception\cf4  \cf7 \{\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf14 objCreator\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 ObjectCreator\cf7 ()\cf5 ;\cf0 \
+\cf4 		\cf14 ser\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Serializer\cf7 ()\cf5 ;\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf3 try\cf4  \cf7 \{\cf0 \
+\cf4 			\cf3 if\cf4  \cf7 (\cf9 args\cf5 .\cf16 length\cf4  \cf5 ==\cf4  \cf11 2\cf7 )\cf0 \
+\cf4 			\cf7 \{\cf0 \
+\cf4 				\cf14 ip\cf4  \cf5 =\cf4  \cf9 args\cf7 [\cf11 0\cf7 ]\cf5 ;\cf0 \
+\cf4 				\cf14 port\cf4  \cf5 =\cf4  \cf6 Integer\cf5 .\cf19 parseInt\cf7 (\cf9 args\cf7 [\cf11 1\cf7 ])\cf5 ;\cf0 \
+\cf4 			\cf7 \}\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 		\cf3 catch\cf4  \cf7 (\cf6 Exception\cf4  \cf10 e\cf7 )\{\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "Sender: Invalid input. Format: Sender <ip> <port>"\cf7 )\cf5 ;\cf4  \cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 	\cf7 \}\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf7 \}\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 /* Name:		J. \ul Daniel\ulnone  \ul Gonzalez\cf0 \ulnone \
+\cf2  * UCID:		10058656\cf0 \
+\cf2  * Class:		CPSC 501\cf0 \
+\cf2  * Ass:			3\cf0 \
+\cf2  * \cf0 \
+\cf2  * Sources: 	1. Used code provided by \ul Waliur\ulnone  \ul Rahman\ulnone  and Lee \ul Ringham\ulnone  as templates for \ul Serializer\ulnone , Sender and Receiver\cf0 \
+\cf2  * 				2. Used my own CPSC 501 Assignment 2 Object Inspect as a template for the Object Visualizer\cf0 \
+\cf2  */\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 package\cf4  receiver\cf5 ;\cf0 \
+\
+\cf3 import\cf4  java\cf5 .\cf4 io\cf5 .\cf4 IOException\cf5 ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 net\cf5 .\cf4 ServerSocket\cf5 ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 net\cf5 .\cf4 Socket\cf5 ;\cf0 \
+\cf3 import\cf4  \cf4 \ul \ulc4 java\cf5 \ulc5 .\cf4 \ulc4 net\cf5 \ulc5 .\cf4 \ulc4 SocketTimeoutException\cf5 \ulnone ;\cf0 \
+\
+\cf3 import\cf4  org\cf5 .\cf4 jdom2\cf5 .*;\cf0 \
+\cf3 import\cf4  \cf4 \ul \ulc4 org\cf5 \ulc5 .\cf4 \ulc4 jdom2\cf5 \ulc5 .\cf4 \ulc4 output\cf5 \ulc5 .\cf4 \ulc4 XMLOutputter\cf5 \ulnone ;\cf0 \
+\
+\cf3 public\cf4  \cf3 class\cf4  \cf6 Receiver\cf4  \cf7 \{\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 	\cf0 \
+\cf4 	\cf3 private\cf4  \cf3 static\cf4  \cf3 int\cf4  \cf14 timeout\cf4  \cf5 =\cf4  \cf11 2000\cf5 ;\cf0 \
+\cf4 	\cf3 private\cf4  \cf3 static\cf4  \cf3 final\cf4  \cf3 char\cf4  \cf14 END_OF_STREAM\cf4  \cf5 =\cf4  \cf7 (\cf3 char\cf7 )\cf5 -\cf11 1\cf5 ;\cf0 \
+\cf4 	\cf3 private\cf4  \cf3 static\cf4  \cf3 int\cf4  \cf14 port\cf4  \cf5 =\cf4  \cf11 8001\cf5 ;\cf0 \
+\cf4 	\cf3 private\cf4  \cf3 static\cf4  \cf6 ServerSocket\cf4  \cf14 serverSock\cf5 ;\cf0 \
+\cf4 	\cf3 private\cf4  \cf3 static\cf4  \cf6 Socket\cf4  \cf14 sock\cf5 ;\cf0 \
+\cf4 	\cf3 private\cf4  \cf3 static\cf4  \cf6 Deserializer\cf4  \cf14 des\cf5 ;\cf0 \
+\cf4 	\cf3 private\cf4  \cf3 static\cf4  \cf6 ObjectVisualizer\cf4  \cf14 objVisualizer\cf5 ;\cf0 \
+\cf4 	\cf0 \
+\cf4 	\cf3 public\cf4  \cf3 static\cf4  \cf3 void\cf4  \cf8 main\cf7 (\cf6 String\cf7 []\cf4  \cf9 args\cf7 )\cf4  \cf3 throws\cf4  \cf6 Exception\cf7 \{\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf19 initialize\cf7 (\cf9 args\cf7 )\cf5 ;\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf3 try\cf4  \cf0 \
+\cf4 		\cf7 \{\cf0 \
+\cf4 				\cf2 //create the socket \cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "========================="\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "Receiver: Waiting for Sender to connect...\\t"\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf14 serverSock\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 ServerSocket\cf7 (\cf14 port\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf14 sock\cf4  \cf5 =\cf4  \cf14 serverSock\cf5 .\cf13 accept\cf7 ()\cf5 ;\cf0 \
+\cf4 			\cf14 sock\cf5 .\cf13 setSoTimeout\cf7 (\cf14 timeout\cf7 )\cf5 ;\cf4 			\cf0 \
+\cf4 			\cf0 \
+\cf4 				\cf2 //read message\cf0 \
+\cf4 			\cf6 String\cf4  \cf10 received\cf4  \cf5 =\cf4  \cf15 ""\cf5 ;\cf0 \
+\cf4 			\cf3 boolean\cf4  \cf10 socketClosed\cf4  \cf5 =\cf4  \cf3 false\cf5 ;\cf0 \
+\cf4 			\cf3 while\cf7 (\cf5 !\cf12 socketClosed\cf7 )\cf0 \
+\cf4 			\cf7 \{\cf0 \
+\cf4 				\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "Receiver: Sender Connected..."\cf7 )\cf5 ;\cf0 \
+\cf4 				\cf3 try\cf4  \cf0 \
+\cf4 				\cf7 \{\cf0 \
+\cf4 					\cf3 char\cf4  \cf10 dataByte\cf5 ;\cf0 \
+\cf4 					\cf3 while\cf7 ((\cf12 dataByte\cf4  \cf5 =\cf4  \cf7 (\cf3 char\cf7 )\cf14 sock\cf5 .\cf13 getInputStream\cf7 ()\cf5 .\cf23 read\cf7 ())\cf4  \cf5 !=\cf4  \cf14 END_OF_STREAM\cf7 )\cf4 				\cf0 \
+\cf4 						\cf12 received\cf4  \cf5 +=\cf4  \cf6 Character\cf5 .\cf19 toString\cf7 (\cf12 dataByte\cf7 )\cf5 ;\cf0 \
+\
+\cf4 					\cf12 socketClosed\cf4  \cf5 =\cf4  \cf12 dataByte\cf4  \cf5 ==\cf4  \cf14 END_OF_STREAM\cf5 ;\cf0 \
+\cf4 				\cf7 \}\cf4  \cf0 \
+\cf4 				\cf3 catch\cf7 (\cf6 IOException\cf4  \cf10 e\cf7 )\cf0 \
+\cf4 				\cf7 \{\cf0 \
+\cf4 					\cf12 e\cf5 .\cf13 printStackTrace\cf7 ()\cf5 ;\cf0 \
+\cf4 				\cf7 \}\cf0 \
+\cf4 				\cf3 finally\cf7 \{\cf0 \
+\cf4 					\cf12 socketClosed\cf4  \cf5 =\cf4  \cf3 true\cf5 ;\cf0 \
+\cf4 					\cf14 sock\cf5 .\cf13 close\cf7 ()\cf5 ;\cf0 \
+\cf4 					\cf14 serverSock\cf5 .\cf13 close\cf7 ()\cf5 ;\cf0 \
+\cf4 				\cf7 \}\cf0 \
+\cf4 			\cf7 \}\cf4  \cf0 \
+\cf4 			\cf0 \
+\cf4 				\cf2 //convert string to XML document (use deserializer's method)\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "Receiver: Received XML"\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf14 des\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 Deserializer\cf7 ()\cf5 ;\cf0 \
+\cf4 			\cf6 Document\cf4  \cf10 doc\cf4  \cf5 =\cf4  \cf14 des\cf5 .\cf13 stringToDoc\cf7 (\cf12 received\cf7 )\cf5 ;\cf0 \
+\cf4 				\cf2 //re-create the object \cf0 \
+\cf4 			\cf6 Object\cf4  \cf10 obj\cf4  \cf5 =\cf4  \cf14 des\cf5 .\cf13 ReadXMLFile\cf7 (\cf12 doc\cf7 )\cf5 ;\cf0 \
+\cf4 				\cf2 //visualize object\cf0 \
+\cf4 			\cf14 objVisualizer\cf5 .\cf13 inspect\cf7 (\cf12 obj\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf0 \
+\cf4 		\cf7 \}\cf4 		\cf0 \
+\cf4 		\cf3 catch\cf4  \cf7 (\cf6 IOException\cf4  \cf10 e\cf7 )\cf4  \cf0 \
+\cf4 		\cf7 \{\cf0 \
+\cf4 			\cf12 e\cf5 .\cf13 printStackTrace\cf7 ()\cf5 ;\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 		\cf3 finally\cf7 \{\cf0 \
+\cf4 				\cf2 //close the socket a second time in case the first one failed....\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "Receiver: Exiting Receiver..."\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "========================="\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf14 sock\cf5 .\cf13 close\cf7 ()\cf5 ;\cf0 \
+\cf4 			\cf14 serverSock\cf5 .\cf13 close\cf7 ()\cf5 ;\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 	\cf7 \}\cf0 \
+\cf4 	\cf0 \
+\cf4 	\cf3 public\cf4  \cf3 static\cf4  \cf3 void\cf4  \cf8 initialize\cf7 (\cf6 String\cf7 []\cf4  \cf9 args\cf7 )\cf4  \cf7 \{\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf3 try\cf4  \cf7 \{\cf0 \
+\cf4 			\cf3 if\cf4  \cf7 (\cf9 args\cf5 .\cf16 length\cf4  \cf5 ==\cf4  \cf11 1\cf7 )\cf0 \
+\cf4 				\cf14 port\cf4  \cf5 =\cf4  \cf6 Integer\cf5 .\cf19 parseInt\cf7 (\cf9 args\cf7 [\cf11 0\cf7 ])\cf5 ;\cf0 \
+\cf4 			\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 		\cf3 catch\cf4  \cf7 (\cf6 Exception\cf4  \cf10 e\cf7 )\{\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "Receiver: Invalid input. Format: Sender <port>"\cf7 )\cf5 ;\cf4  \cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 	\cf7 \}\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf7 \}\cf2 /* Name:		J. \ul Daniel\ulnone  \ul Gonzalez\cf0 \ulnone \
+\pard\pardeftab720\partightenfactor0
+\cf2  * UCID:		10058656\cf0 \
+\cf2  * Class:		CPSC 501\cf0 \
+\cf2  * Ass:			3\cf0 \
+\cf2  * \cf0 \
+\cf2  * Sources: 	1. Used code provided by \ul Waliur\ulnone  \ul Rahman\ulnone  and Lee \ul Ringham\ulnone  as templates for \ul Serializer\ulnone , Sender and Receiver\cf0 \
+\cf2  * 				2. Used my own CPSC 501 Assignment 2 Object Inspect as a template for the Object Visualizer\cf0 \
+\cf2  */\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 package\cf4  receiver\cf5 ;\cf0 \
+\
+\cf3 import\cf4  java\cf5 .\cf4 io\cf5 .\cf4 ByteArrayInputStream\cf5 ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 io\cf5 .\cf4 InputStream\cf5 ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 lang\cf5 .\cf4 reflect\cf5 .*;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 util\cf5 .\cf4 List\cf5 ;\cf0 \
+\cf3 import\cf4  \cf4 \ul \ulc4 objects\cf5 \ulnone .*;\cf0 \
+\
+\cf3 import\cf4  org\cf5 .\cf4 jdom2\cf5 .*;\cf0 \
+\cf3 import\cf4  org\cf5 .\cf4 jdom2\cf5 .\cf4 input\cf5 .\cf4 SAXBuilder\cf5 ;\cf0 \
+\
+\cf3 public\cf4  \cf3 class\cf4  \cf6 Deserializer\cf4  \cf7 \{\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 	\cf0 \
+\cf4 	\cf3 private\cf4  \cf6 Integer\cf4  \cf16 \ul \ulc16 referenceID\cf4 \ulnone  \cf5 =\cf4  \cf11 0\cf5 ;\cf0 \
+\cf4 	\cf3 private\cf4  \cf6 \ul \ulc6 Class\cf4 \ulnone  \cf16 c\cf4  \cf5 =\cf4  \cf3 null\cf5 ;\cf0 \
+\cf4 	\cf3 private\cf4  \cf6 Object\cf4  \cf16 obj\cf5 ;\cf0 \
+\
+\cf4 		\cf2 //reads a XML Document representation of an object, creates the object and object\cf0 \
+\cf4 	\cf3 public\cf4  \cf6 Object\cf4  \cf8 ReadXMLFile\cf7 (\cf6 Document\cf4  \cf9 doc\cf7 )\{\cf0 \
+\
+\cf4 			\cf2 //get root node, get list of fields\cf0 \
+\cf4 		\cf6 Element\cf4  \cf10 rootNode\cf4  \cf5 =\cf4  \cf9 doc\cf5 .\cf13 getRootElement\cf7 ()\cf5 ;\cf0 \
+\cf4 		\cf24 \ul \ulc24 List\cf4 \ulnone  \cf10 list\cf4  \cf5 =\cf4  \cf12 rootNode\cf5 .\cf13 getChildren\cf7 (\cf15 "Object"\cf7 )\cf5 ;\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf3 try\cf4  \cf0 \
+\cf4 		\cf7 \{\cf4 			\cf0 \
+\cf4 				\cf2 //get id of object\cf0 \
+\cf4 			\cf3 int\cf4  \cf10 \ul \ulc10 id\cf4 \ulnone  \cf5 =\cf4  \cf6 Integer\cf5 .\cf19 parseInt\cf7 (\cf12 rootNode\cf5 .\cf13 getAttributeValue\cf7 (\cf15 "id"\cf7 ))\cf5 ;\cf0 \
+\
+\cf4 				\cf2 //dynamically load class\cf0 \
+\cf4 			\cf6 String\cf4  \cf10 className\cf4  \cf5 =\cf4  \cf12 rootNode\cf5 .\cf13 getAttributeValue\cf7 (\cf15 "class"\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf16 c\cf4  \cf5 =\cf4  \cf6 Class\cf5 .\cf19 forName\cf7 (\cf12 className\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "Class Loaded:"\cf4  \cf5 +\cf4  \cf16 c\cf5 .\cf13 getName\cf7 ())\cf5 ;\cf0 \
+\cf4 			\cf0 \
+\cf4 				\cf2 //\ul reflectievly\ulnone  \ul construt\ulnone  an instance of this class\cf0 \
+\cf4 			\cf6 \ul \ulc6 Class\cf7 \ulnone []\cf4  \cf10 arguments\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf6 Class\cf7 []\{\cf16 c\cf7 \}\cf5 ;\cf0 \
+\cf4 			\cf6 \ul \ulc6 Constructor\cf4 \ulnone  \cf10 constructor\cf4  \cf5 =\cf4  \cf16 \ul \ulc16 c\cf5 \ulc5 .\cf13 \ulc13 getConstructor\cf7 \ulc7 (\cf12 \ulc12 arguments\cf7 \ulc7 )\cf5 \ulnone ;\cf4  \cf0 \
+\cf4 			\cf16 obj\cf4  \cf5 =\cf4  \cf12 constructor\cf5 .\cf13 newInstance\cf7 ()\cf5 ;\cf4 		\cf0 \
+\cf4 			\cf0 \
+\cf4 			\cf3 for\cf4  \cf7 (\cf3 int\cf4  \cf10 i\cf4  \cf5 =\cf4  \cf11 0\cf5 ;\cf4  \cf12 i\cf4  \cf5 <\cf4  \cf12 list\cf5 .\cf23 size\cf7 ()\cf5 ;\cf4  \cf12 i\cf5 ++\cf7 )\cf4  \cf7 \{\cf0 \
+\
+\cf4 					\cf2 //find "field" node\cf0 \
+\cf4 			   \cf6 Element\cf4  \cf10 node\cf4  \cf5 =\cf4  \cf7 (\cf6 Element\cf7 )\cf4  \cf12 list\cf5 .\cf23 get\cf7 (\cf12 i\cf7 )\cf5 ;\cf0 \
+\cf4 			   \cf6 String\cf4  \cf10 fieldName\cf4  \cf5 =\cf4  \cf12 node\cf5 .\cf13 getChildText\cf7 (\cf15 "name"\cf7 )\cf5 ;\cf0 \
+\cf4 			   \cf6 String\cf4  \cf10 fieldValue\cf4  \cf5 =\cf4  \cf12 node\cf5 .\cf13 getChildText\cf7 (\cf15 "value"\cf7 )\cf5 ;\cf0 \
+\cf4 			   \cf0 \
+\cf4 					\cf2 //get the Field\cf0 \
+\cf4 				\cf6 Field\cf4  \cf10 f\cf4  \cf5 =\cf4  \cf16 c\cf5 .\cf13 getDeclaredField\cf7 (\cf12 fieldName\cf7 )\cf5 ;\cf0 \
+\cf4 				\cf0 \
+\cf4 					\cf2 //override fields accessibility\cf0 \
+\cf4 				\cf3 if\cf7 (\cf5 !\cf12 f\cf5 .\cf13 isAccessible\cf7 ())\cf0 \
+\cf4 					\cf12 f\cf5 .\cf13 setAccessible\cf7 (\cf3 true\cf7 )\cf5 ;\cf0 \
+\cf4 				\cf0 \
+\cf4 					\cf2 //set field value to its value\cf0 \
+\cf4 				\cf12 f\cf5 .\cf13 set\cf7 (\cf16 obj\cf5 ,\cf4  \cf12 fieldValue\cf7 )\cf5 ;\cf0 \
+\cf4 				\cf12 f\cf5 .\cf13 setAccessible\cf7 (\cf3 false\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf7 \}\cf0 \
+\cf4 			\cf0 \
+\cf4 		\cf7 \}\cf4  \cf0 \
+\cf4 		\cf3 catch\cf4  \cf7 (\cf6 Exception\cf4  \cf10 e\cf7 )\{\cf0 \
+\cf4 			\cf12 e\cf5 .\cf13 printStackTrace\cf7 ()\cf5 ;\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf3 return\cf4  \cf16 obj\cf5 ;\cf0 \
+\cf4 	\cf7 \}\cf0 \
+\cf4 	\cf0 \
+\cf4 	\cf2 //Return XML Document representation of a String\cf0 \
+\cf4 	\cf3 public\cf4  \cf6 Document\cf4  \cf8 stringToDoc\cf7 (\cf6 String\cf4  \cf9 docString\cf7 )\cf0 \
+\cf4 	\cf7 \{\cf0 \
+\cf4 		 \cf6 Document\cf4  \cf10 doc\cf4  \cf5 =\cf4  \cf3 null\cf5 ;\cf4 	\cf0 \
+\cf4 		 \cf3 try\cf0 \
+\cf4 		 \cf7 \{\cf4 			 		 \cf0 \
+\cf4 			 \cf6 SAXBuilder\cf4  \cf10 docBuilder\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 SAXBuilder\cf7 ()\cf5 ;\cf0 \
+\cf4 			 \cf22 InputStream\cf4  \cf10 docStream\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 ByteArrayInputStream\cf7 (\cf9 docString\cf5 .\cf13 getBytes\cf7 (\cf15 "UTF-8"\cf7 ))\cf5 ;\cf0 \
+\cf4 			 \cf12 doc\cf4  \cf5 =\cf4  \cf12 docBuilder\cf5 .\cf13 build\cf7 (\cf12 docStream\cf7 )\cf5 ;\cf4 			 \cf0 \
+\cf4 		 \cf7 \}\cf0 \
+\cf4 		 \cf3 catch\cf7 (\cf6 Exception\cf4  \cf10 e\cf7 )\cf0 \
+\cf4 		 \cf7 \{\cf0 \
+\cf4 			 \cf12 e\cf5 .\cf13 printStackTrace\cf7 ()\cf5 ;\cf0 \
+\cf4 		 \cf7 \}\cf4 		\cf0 \
+\cf4 		 \cf3 return\cf4  \cf12 doc\cf5 ;\cf0 \
+\cf4 	\cf7 \}\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf7 \}\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf2 /* Name:		J. \ul Daniel\ulnone  \ul Gonzalez\cf0 \ulnone \
+\cf2  * UCID:		10058656\cf0 \
+\cf2  * Class:		CPSC 501\cf0 \
+\cf2  * Ass:			3\cf0 \
+\cf2  * \cf0 \
+\cf2  * Sources: 	1. Used code provided by \ul Waliur\ulnone  \ul Rahman\ulnone  and Lee \ul Ringham\ulnone  as templates for \ul Serializer\ulnone , Sender and Receiver\cf0 \
+\cf2  * 				2. Used my own CPSC 501 Assignment 2 Object Inspect as a template for the Object Visualizer\cf0 \
+\cf2  */\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 package\cf4  receiver\cf5 ;\cf0 \
+\
+\cf3 import\cf4  java\cf5 .\cf4 lang\cf5 .\cf4 reflect\cf5 .\cf4 Array\cf5 ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 lang\cf5 .\cf4 reflect\cf5 .\cf4 Field\cf5 ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 lang\cf5 .\cf4 reflect\cf5 .\cf4 Modifier\cf5 ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 util\cf5 .\cf4 Enumeration\cf5 ;\cf0 \
+\cf3 import\cf4  java\cf5 .\cf4 util\cf5 .\cf4 Vector\cf5 ;\cf0 \
+\
+\cf3 public\cf4  \cf3 class\cf4  \cf6 ObjectVisualizer\cf4  \cf7 \{\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 	\cf3 int\cf4  \cf16 objVisualized\cf4  \cf5 =\cf4  \cf11 0\cf5 ;\cf0 \
+\cf4 	\cf6 String\cf4  \cf16 spacing\cf4  \cf5 =\cf4  \cf15 "    "\cf5 ;\cf0 \
+\cf4 	\cf0 \
+\cf4 	\cf3 public\cf4  \cf8 ObjectVisualizer\cf7 ()\{\cf0 \
+\cf4 		\cf0 \
+\cf4 	\cf7 \}\cf0 \
+\cf4 	\cf0 \
+\cf4 	\cf0 \
+\cf4 	\cf2 //\cf20 TODO\cf2 : for object references, should print object ID instead of reference\cf0 \
+\cf4 	\cf0 \
+\cf4 		\cf2 //does introspection on a object and displays its contents\cf0 \
+\cf4 	\cf3 public\cf4  \cf3 void\cf4  \cf8 inspect\cf7 (\cf6 Object\cf4  \cf9 obj\cf7 )\{\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf3 if\cf4  \cf7 (\cf16 objVisualized\cf4  \cf5 ==\cf4  \cf11 0\cf7 )\{\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "Visualizer: Starting Object Visualizer on object: "\cf4  \cf5 +\cf4  \cf9 obj\cf5 .\cf18 getClass\cf7 ()\cf5 .\cf13 getName\cf7 ()\cf4  \cf5 +\cf4  \cf15 "\\n"\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf16 objVisualized\cf5 ++;\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 		\cf0 \
+\cf4 			\cf2 //objects to inspect within out \cf0 \
+\cf4 		\cf6 \ul \ulc6 Vector\cf4 \ulnone  \cf10 objectsToInspect\cf4  \cf5 =\cf4  \cf3 new\cf4  \cf13 \ul \ulc13 Vector\cf7 \ulnone ()\cf5 ;\cf0 \
+\cf4 		\cf6 \ul \ulc6 Class\cf4 \ulnone  \cf10 objectClass\cf4  \cf5 =\cf4  \cf9 obj\cf5 .\cf18 getClass\cf7 ()\cf5 ;\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "\\n\\n"\cf4  \cf5 +\cf4  \cf16 spacing\cf4  \cf5 +\cf4  \cf15 "Object to visualize: "\cf4  \cf5 +\cf4  \cf9 obj\cf7 )\cf5 ;\cf0 \
+\
+\cf4 		\cf13 inspectFields\cf7 (\cf9 obj\cf5 ,\cf4  \cf12 objectClass\cf5 ,\cf4  \cf12 objectsToInspect\cf7 )\cf5 ;\cf0 \
+\cf4 		\cf0 \
+\cf4 			\cf2 //inspect objects within this object\cf0 \
+\cf4 		\cf3 if\cf4  \cf7 (\cf12 objectsToInspect\cf5 .\cf13 size\cf7 ()\cf4  \cf5 >\cf4  \cf11 0\cf7 )\cf0 \
+\cf4 			\cf13 inspectFieldRecursive\cf7 (\cf9 obj\cf5 ,\cf4  \cf12 objectClass\cf5 ,\cf4  \cf12 objectsToInspect\cf7 )\cf5 ;\cf0 \
+\cf4 	\cf7 \}\cf0 \
+\cf4 		\cf0 \
+\cf4 	\cf3 public\cf4  \cf3 void\cf4  \cf8 inspectArray\cf7 (\cf6 Field\cf4  \cf9 field\cf5 ,\cf4  \cf6 Object\cf4  \cf9 obj\cf7 )\{\cf0 \
+\cf4 		\cf3 try\cf7 \{\cf4  \cf0 \
+\cf4 			\cf0 \
+\cf4 			\cf6 Object\cf4  \cf10 array\cf4  \cf5 =\cf4  \cf9 field\cf5 .\cf13 get\cf7 (\cf9 obj\cf7 )\cf5 ;\cf0 \
+\cf4 		\cf0 \
+\cf4 			\cf3 for\cf4  \cf7 (\cf3 int\cf4  \cf10 i\cf4  \cf5 =\cf4  \cf11 0\cf5 ;\cf4  \cf12 i\cf4  \cf5 <\cf4  \cf6 Array\cf5 .\cf19 getLength\cf7 (\cf12 array\cf7 )\cf5 ;\cf4  \cf12 i\cf4  \cf5 ++\cf7 )\{\cf0 \
+\cf4 				\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf16 spacing\cf4  \cf5 +\cf4  \cf9 field\cf5 .\cf13 getName\cf7 ()\cf4  \cf5 +\cf4  \cf15 "["\cf4  \cf5 +\cf4  \cf12 i\cf4  \cf5 +\cf4  \cf15 "] = "\cf4  \cf5 +\cf4  \cf6 Array\cf5 .\cf19 get\cf7 (\cf12 array\cf5 ,\cf4  \cf12 i\cf7 ))\cf5 ;\cf0 \
+\cf4 				\cf0 \
+\cf4 			\cf7 \}\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 			\cf2 //reached end of array\cf0 \
+\cf4 		\cf3 catch\cf4  \cf7 (\cf6 Exception\cf4  \cf10 e\cf7 )\{\cf0 \
+\cf4 			\cf2 //e.printStackTrace();\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf16 spacing\cf4  \cf5 +\cf4  \cf15 "Array not initialized"\cf7 )\cf5 ;\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 	\cf7 \}\cf0 \
+\cf4 	\cf0 \
+\cf4 	\cf3 public\cf4  \cf3 void\cf4  \cf8 printFieldInfo\cf7 (\cf6 Field\cf4  \cf9 field\cf5 ,\cf4  \cf6 Object\cf4  \cf9 obj\cf7 )\{\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf3 try\cf7 \{\cf0 \
+\cf4 				\cf2 //Name\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf16 spacing\cf4  \cf5 +\cf4  \cf15 "Field Name: "\cf4  \cf5 +\cf4  \cf9 field\cf5 .\cf13 getName\cf7 ())\cf5 ;\cf0 \
+\cf4 				\cf2 //Type\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf16 spacing\cf4  \cf5 +\cf4  \cf15 "Type: "\cf4  \cf5 +\cf4  \cf9 field\cf5 .\cf13 getType\cf7 ()\cf5 .\cf13 toString\cf7 ())\cf5 ;\cf0 \
+\cf4 				\cf2 //Modifiers\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf16 spacing\cf4  \cf5 +\cf4  \cf15 "Modifiers: "\cf4  \cf5 +\cf4  \cf6 Modifier\cf5 .\cf19 toString\cf7 (\cf9 field\cf5 .\cf13 getModifiers\cf7 ()))\cf5 ;\cf0 \
+\cf4 			\cf0 \
+\cf4 				\cf2 //For primitive fields, print current value\cf0 \
+\cf4 			\cf3 if\cf4  \cf7 (\cf9 field\cf5 .\cf13 getType\cf7 ()\cf5 .\cf13 isPrimitive\cf7 ())\cf0 \
+\cf4 				\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf16 spacing\cf4  \cf5 +\cf4  \cf15 "Current value: "\cf4  \cf5 +\cf4  \cf9 field\cf5 .\cf13 get\cf7 (\cf9 obj\cf7 ))\cf5 ;\cf0 \
+\cf4 				\cf2 //for object fields, print pointer value when recursion is off\cf0 \
+\cf4 			\cf3 else\cf4  \cf3 if\cf4  \cf7 (\cf5 !\cf9 field\cf5 .\cf13 getType\cf7 ()\cf5 .\cf13 isPrimitive\cf7 ())\cf0 \
+\cf4 				\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf16 spacing\cf4  \cf5 +\cf4  \cf15 "Current value (pointer): "\cf4  \cf5 +\cf4  \cf9 field\cf5 .\cf13 get\cf7 (\cf9 obj\cf7 ))\cf5 ;\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 		\cf3 catch\cf7 (\cf6 Exception\cf4  \cf10 e\cf7 )\{\cf0 \
+\cf4 			\cf12 e\cf5 .\cf13 printStackTrace\cf7 ()\cf5 ;\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 	\cf7 \}\cf0 \
+\cf4 	\cf0 \
+\cf4 	\cf3 public\cf4  \cf3 void\cf4  \cf8 inspectFields\cf7 (\cf6 Object\cf4  \cf9 obj\cf5 ,\cf4  \cf6 \ul \ulc6 Class\cf4 \ulnone  \cf9 ObjectClass\cf5 ,\cf4  \cf6 \ul \ulc6 Vector\cf4 \ulnone  \cf9 objectsToInspect\cf7 )\{\cf0 \
+\cf4 		\cf0 \
+\cf4 			\cf2 //if there is at least one field to inspect\cf0 \
+\cf4 		\cf3 if\cf4  \cf7 (\cf9 ObjectClass\cf5 .\cf13 getDeclaredFields\cf7 ()\cf5 .\cf16 length\cf4  \cf5 >=\cf4  \cf11 1\cf7 )\{\cf0 \
+\cf4 						\cf0 \
+\cf4 			\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "---- Inspecting Declared Fields ---"\cf7 )\cf5 ;\cf0 \
+\
+\cf4 			\cf6 Field\cf7 []\cf4  \cf10 declaredFields\cf4  \cf5 =\cf4  \cf9 ObjectClass\cf5 .\cf13 getDeclaredFields\cf7 ()\cf5 ;\cf0 \
+\cf4 			\cf0 \
+\cf4 				\cf2 //inspect every field in the class \cf0 \
+\cf4 			\cf3 for\cf4  \cf7 (\cf6 Field\cf4  \cf10 field\cf4  \cf5 :\cf4  \cf12 declaredFields\cf7 )\{\cf0 \
+\
+\cf4 				\cf2 //Field field = ObjectClass.getDeclaredFields()[0];\cf0 \
+\cf4 				\cf12 field\cf5 .\cf13 setAccessible\cf7 (\cf3 true\cf7 )\cf5 ;\cf0 \
+\cf4 									\cf0 \
+\cf4 				\cf3 try\cf7 \{\cf0 \
+\cf4 					\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf16 spacing\cf4  \cf5 +\cf4  \cf15 "Field Declaration: "\cf4  \cf5 +\cf4  \cf12 field\cf5 .\cf13 toString\cf7 ()\cf4  \cf5 +\cf4  \cf15 " = "\cf4  \cf5 +\cf4  \cf12 field\cf5 .\cf13 get\cf7 (\cf9 obj\cf7 ))\cf5 ;\cf0 \
+\cf4 					\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf16 spacing\cf4  \cf5 +\cf4  \cf15 "Declaring class: "\cf4  \cf5 +\cf4  \cf9 ObjectClass\cf5 .\cf13 getName\cf7 ())\cf5 ;\cf4  	\cf0 \
+\cf4 				\cf7 \}\cf0 \
+\cf4 				\cf3 catch\cf7 (\cf6 Exception\cf4  \cf10 e\cf7 )\{\cf0 \
+\cf4 					\cf12 e\cf5 .\cf13 printStackTrace\cf7 ()\cf5 ;\cf0 \
+\cf4 				\cf7 \}\cf0 \
+\cf4 					\cf0 \
+\cf4 					\cf2 //if field is an array, inspect each element of the array\cf0 \
+\cf4 				\cf3 if\cf4  \cf7 (\cf12 field\cf5 .\cf13 getType\cf7 ()\cf5 .\cf13 isArray\cf7 ())\{\cf0 \
+\cf4 					\cf13 inspectArray\cf7 (\cf12 field\cf5 ,\cf4  \cf9 obj\cf7 )\cf5 ;\cf0 \
+\cf4 				\cf7 \}\cf0 \
+\cf4 				\cf2 //field is not an array\cf0 \
+\cf4 				\cf3 else\cf7 \{\cf0 \
+\cf4 					\cf0 \
+\cf4 					\cf13 printFieldInfo\cf7 (\cf12 field\cf5 ,\cf4  \cf9 obj\cf7 )\cf5 ;\cf0 \
+\cf4 					\cf0 \
+\cf4 					\cf2 //if an object's field is not primitive and recursive is true, then that field is an object that must be inspected\cf0 \
+\cf4 					\cf3 if\cf4  \cf7 (\cf5 !\cf12 field\cf5 .\cf13 getType\cf7 ()\cf5 .\cf13 isPrimitive\cf7 ())\cf0 \
+\cf4 						\cf9 \ul \ulc9 objectsToInspect\cf5 \ulc5 .\cf13 \ulc13 addElement\cf7 \ulc7 (\cf12 \ulc12 field\cf7 \ulc7 )\cf5 \ulnone ;\cf0 \
+\cf4 				\cf7 \}\cf0 \
+\cf4 				\cf0 \
+\cf4 				\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 ""\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf7 \}\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 	\cf7 \}\cf0 \
+\cf4 	\cf0 \
+\cf4 	\cf3 public\cf4  \cf3 void\cf4  \cf8 inspectFieldRecursive\cf7 (\cf6 Object\cf4  \cf9 obj\cf5 ,\cf4  \cf6 \ul \ulc6 Class\cf4 \ulnone  \cf9 ObjectClass\cf5 ,\cf4  \cf6 \ul \ulc6 Vector\cf4 \ulnone  \cf9 objectsToInspect\cf7 )\{\cf0 \
+\cf4 		\cf0 \
+\cf4 		\cf3 if\cf4  \cf7 (\cf9 objectsToInspect\cf5 .\cf13 size\cf7 ()\cf4  \cf5 >\cf4  \cf11 0\cf7 )\cf0 \
+\cf4 		    \cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "---- Inspecting Field Objects ----"\cf7 )\cf5 ;\cf0 \
+\
+\cf4 		\cf24 \ul \ulc24 Enumeration\cf4 \ulnone  \cf10 elements\cf4  \cf5 =\cf4  \cf9 objectsToInspect\cf5 .\cf13 elements\cf7 ()\cf5 ;\cf0 \
+\
+\cf4 		\cf2 //loop until every element has been inspected\cf0 \
+\cf4 		\cf3 while\cf7 (\cf12 elements\cf5 .\cf23 hasMoreElements\cf7 ())\{\cf0 \
+\cf4 			\cf0 \
+\cf4 			\cf6 Field\cf4  \cf10 field\cf4  \cf5 =\cf4  \cf7 (\cf6 Field\cf7 )\cf4  \cf12 elements\cf5 .\cf23 nextElement\cf7 ()\cf5 ;\cf0 \
+\cf4 			\cf12 field\cf5 .\cf13 setAccessible\cf7 (\cf3 true\cf7 )\cf5 ;\cf0 \
+\cf4 			\cf0 \
+\cf4 			\cf3 try\cf7 \{\cf0 \
+\cf4 				\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "******************"\cf7 )\cf5 ;\cf0 \
+\cf4 				\cf13 inspect\cf7 (\cf12 field\cf5 .\cf13 get\cf7 (\cf9 obj\cf7 ))\cf5 ;\cf0 \
+\cf4 				\cf6 System\cf5 .\cf14 out\cf5 .\cf13 println\cf7 (\cf15 "******************"\cf7 )\cf5 ;\cf4 		\cf0 \
+\cf4 			\cf7 \}\cf0 \
+\cf4 			\cf3 catch\cf7 (\cf6 Exception\cf4  \cf10 e\cf7 )\{\cf0 \
+\cf4 				\cf12 e\cf5 .\cf13 printStackTrace\cf7 ()\cf5 ;\cf0 \
+\cf4 			\cf7 \}\cf0 \
+\cf4 		\cf7 \}\cf0 \
+\cf4 	\cf7 \}\cf4 	\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf7 \}\cf0 \
+}
