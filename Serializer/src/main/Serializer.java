@@ -72,7 +72,7 @@ public class Serializer {
 		objectElement.setAttribute(new Attribute("id", Integer.toString(id)) );
 		doc.getRootElement().addContent(objectElement);
 
-				//if object is an array
+			//if object is an array
 		if(c.isArray()) {
 			Object array = object;
 			objectElement.setAttribute(new Attribute("length", Integer.toString(Array.getLength(array))) );

@@ -6,7 +6,7 @@ public class Driver {
 
 	public static void main(String[] args) throws Exception{
 		ObjectCreator objCreator = new ObjectCreator();
-		Object obj = objCreator.createObject(4);
+		Object obj = objCreator.createObject(0);
 		
 		Serializer ser = new Serializer();
 		Document doc = ser.serialize(obj);

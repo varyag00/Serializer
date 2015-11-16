@@ -43,26 +43,4 @@ public class ObjectCreator {
 		
 		
 	}
-
-//	private SimpleObject createSimpleObject() {
-////		int a = GUI.getIntInput("enter value for field \"a\":");
-////		int b= GUI...
-////		return SimpleObject....;
-//	}
-
-
-//	private ObjectsCollectionObject createObjectsCollectionObject() {
-////		Vector<Object> list = new Vector<Object>();
-////		int collectionSize = GUI.getIntInput(....);
-////		for(int i = 0; i < collectionSize; i++) {
-////			list.add(createObject());
-////		}
-////		return new ObjectsCollectionObject(list);
-//		
-//		return new ObjectsCollectionObject();
-//	}
-
-
-
-
 }
