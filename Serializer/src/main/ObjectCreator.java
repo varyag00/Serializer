@@ -2,6 +2,9 @@
  * UCID:		10058656
  * Class:		CPSC 501
  * Ass:			3
+ * 
+ * Sources: 	1. Used code provided by Waliur Rahman and Lee Ringham as templates for Serializer, Sender and Receiver
+ * 				2. Used my own CPSC 501 Assignment 2 Object Inspect as a template for the Object Visualizer
  */
 
 package main;
@@ -10,8 +13,6 @@ import objects.*;
 
 public class ObjectCreator {
 
-	
-	
 		//creates a new object based on input type and prompts user for instance variable values
 	public Object createObject(int selection) throws IllegalArgumentException{
 		Object obj;

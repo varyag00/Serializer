@@ -33,7 +33,7 @@ public class Network {
 			socket.setSoTimeout(500);
 		} catch(IOException e) {
 			System.out.println(e.getMessage());
-			Sender.setConnected(false);
+			//Sender.setConnected(false);
 		}
 	}
 
