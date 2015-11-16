@@ -13,6 +13,7 @@ public class Deserializer {
 	
 	private Integer referenceID = 0;
 
+	//TODO: get shit done homie
 	
 	private int getID(Object object) {
 		Integer id = referenceID;

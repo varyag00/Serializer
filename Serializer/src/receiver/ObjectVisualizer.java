@@ -28,7 +28,7 @@ public class ObjectVisualizer {
 	}
 	
 	
-	//TODO: for object refences, should print object ID instead of reference
+	//TODO: for object references, should print object ID instead of reference
 	
 		//does introspection on a object and displays its contents
 	public void inspect(Object obj){
