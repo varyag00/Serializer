@@ -1,5 +1,7 @@
 package main;
 
+import java.beans.XMLDecoder;
+import java.io.PrintWriter;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -9,6 +11,7 @@ import java.util.HashMap;
 import org.jdom2.Attribute;
 import org.jdom2.Document;
 import org.jdom2.Element;
+import org.jdom2.output.XMLOutputter;
 
 public class Serializer {
 	private Document doc = null;
@@ -23,6 +26,18 @@ public class Serializer {
 		
 	}
 
+	public void testSerializer(Document doc) throws Exception{
+		XMLOutputter outputter = new XMLOutputter();
+		
+		String output = outputter.outputString(doc);
+		
+		//System.out.println(output);
+		
+		PrintWriter out = new PrintWriter("test.xml");
+		out.println(output);
+		out.close();
+	}
+	
 	public Document serialize(Object object) {
 
 			// check if object == null		
